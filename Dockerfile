@@ -10,9 +10,4 @@ RUN chown -R odoo:odoo /mnt/extra-addons
 USER odoo
 
 # Use environment variables provided by Render (set them in the dashboard)
-CMD ["odoo", 
-     "--db_host=${PGHOST}", 
-     "--db_port=${PGPORT}", 
-     "--db_user=${PGUSER}", 
-     "--db_password=${PGPASSWORD}", 
-     "--addons-path=/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons"]
+CMD odoo --db_host=$PGHOST --db_port=$PGPORT --db_user=$PGUSER --db_password=$PGPASSWORD --addons-path=/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons
