@@ -1,7 +1,7 @@
 FROM odoo:16
 
 # Copy your custom addons
-COPY ./addons /mnt/extra-addons
+COPY ./local-addons /mnt/extra-addons
 
 # Make sure the Odoo user has access
 USER root
